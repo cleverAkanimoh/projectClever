@@ -1,0 +1,1586 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none !important;
+	text-decoration: none;
+	font-family: Cambria, Cochin, "Georgia", Times, Times New Roman, serif;
+	font-weight: bold;
+	-webkit-tap-highlight-color: rgb(255, 255, 255, 0);
+}
+
+@keyframes vibrate {
+	from {
+		transform: rotate(36deg);
+	}
+	to {
+		transform: rotate(-36deg);
+	}
+}
+
+body {
+	scroll-behavior: smooth;
+}
+
+a:hover svg {
+	animation: vibrate 0.5s alternate-reverse 5 forwards;
+}
+
+.hamm-div {
+	display: none;
+	z-index: 1;
+}
+
+.hamm-content {
+	display: block;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 40;
+	transform: translateY(-100%);
+	transition: all 0.55s;
+}
+
+/* .show {
+	scale: 1;
+	visibility: visible;
+	z-index: 100;
+} */
+
+/* nav links */
+
+nav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: white;
+	z-index: 50;
+	padding: 0 !important;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+	scale: 1.02;
+}
+
+nav ul {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 0.7rem;
+}
+nav li.logo {
+	color: purple;
+	font-weight: bolder;
+	font-size: 35px;
+	padding: 25px 1px;
+	margin: 10px 0 0px 50px;
+	padding: 22px 22px;
+	cursor: pointer;
+}
+
+/* nav middle right */
+nav li.middle:not(.about) {
+	font-size: 17px;
+	padding: 22px 0px 28px 0px;
+	margin: 15px 15px 15px 0;
+}
+
+nav li.middle a:link,
+nav li.middle a:visited {
+	color: green;
+	padding: 22px 18px;
+}
+
+nav li.middle a:hover {
+	color: black;
+	border-bottom: 8px solid green;
+}
+
+nav li.middle a svg:not(.bi.bi-phone) {
+	transform: rotate(90deg);
+}
+
+/* nav about */
+nav .about {
+	margin: 30px 0px 0 20px;
+}
+
+nav .about-btn {
+	cursor: pointer;
+	background-color: green;
+	color: white;
+	border: none;
+	padding: 13px 15px;
+	font-size: 17px;
+	font-weight: bolder;
+	border-radius: 0.3rem;
+}
+
+nav .about-btn:hover,
+nav button.profile-btn:hover {
+	opacity: 0.5;
+	transition: all 0.5s;
+}
+
+nav .about-btn:active {
+	opacity: 0.9;
+	width: 100px;
+	background: linear-gradient(45deg, green, lime);
+	transition: all 0.5s;
+}
+
+/* nav profile here */
+
+nav .profile {
+	padding: 0;
+	margin-top: 17px;
+	margin-left: 20px;
+}
+
+nav .profile img {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+
+nav button.profile-btn {
+	width: 70px;
+	height: 68px;
+	border: 2px solid green;
+	border-radius: 50%;
+	cursor: pointer;
+	padding: 2px;
+}
+
+.profileContainer {
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: -100;
+	visibility: hidden;
+}
+
+.profileContainer.show {
+	visibility: visible;
+	z-index: 100;
+}
+
+.profileContainer.show .profileModal {
+	scale: 1;
+	opacity: 1;
+}
+.profileContainer .profileModal {
+	width: 80vw;
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	background: white;
+	border-radius: 1rem;
+	opacity: 1;
+	scale: 0;
+	transition: all 0.45s;
+}
+
+.profileContainer.show .profileModal img {
+	scale: 1;
+}
+.profileContainer .profileModal img {
+	width: 70vw;
+	height: 50vh;
+	scale: 0;
+	border-radius: 1rem;
+	transition: all 0.45s;
+}
+
+/* intro article */
+
+article.intro {
+	position: relative;
+	background-color: white;
+	margin-top: 125px;
+	margin-bottom: 50px;
+	padding: 20px 80px 15px;
+	display: flex;
+	flex-direction: row-reverse;
+	overflow: hidden;
+	z-index: 0;
+}
+
+article img {
+	width: 90%;
+	height: 420px;
+	border-radius: 0.8rem 0 0.8rem 0.8rem;
+	transform: translateX(100%);
+	opacity: 0;
+}
+
+article section {
+	padding: 100px 100px 0 40px;
+}
+
+article section h2 {
+	font-size: 40px;
+	font-weight: 500;
+	padding-bottom: 23px;
+	text-align: left;
+}
+
+article p.quote {
+	text-align: left;
+	font-size: 21px;
+	color: #333;
+	font-weight: 400;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+		sans-serif;
+}
+
+article div {
+	margin: 50px 0 0;
+	text-align: left;
+}
+
+button.fancy {
+	margin-right: 50px;
+	padding: 14px 40px;
+	border: none;
+	background-color: green;
+	color: white;
+	border-radius: 0.2rem;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+button.fancy:hover {
+	opacity: 0.5;
+}
+
+button.anotherfancy {
+	padding: 13px 39px;
+	border: 1px solid green;
+	background-color: white;
+	border-radius: 0.2rem;
+	cursor: pointer;
+}
+
+article p.intro-p {
+	position: absolute;
+	bottom: 10%;
+	font-size: 17px;
+	text-align: left;
+	color: green;
+}
+
+article small {
+	color: black;
+	padding: 0 2px;
+}
+
+/* sectionsection */
+
+section.absolute {
+	position: relative;
+	margin: 20px 5px 60px;
+	padding: 20px 10px 0px 10px;
+}
+
+section.absolute div.stack {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: fit-content;
+	overflow: hidden;
+	padding: 3px;
+	transform: translate(25%, -25%);
+	z-index: 10;
+}
+
+section.absolute div.stack button {
+	width: fit-content;
+	height: 45px;
+	padding: 0 5px;
+	border: 1px solid green;
+	border-radius: 0.6rem;
+}
+
+section.absolute div.slider {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: fit-content;
+	border: 1px solid green;
+	overflow: hidden;
+	padding: 8px;
+	border-radius: 0.6rem;
+	transform: translate(-6%, -25%);
+}
+
+div.slider .previous,
+.next {
+	padding: 4px 7px;
+	margin: 0 4px;
+	border: none;
+	background-color: whitesmoke;
+	border-radius: 0.6rem;
+	font-weight: bolder;
+	font-size: 20px;
+}
+
+div.slider .previous:hover,
+div.slider .next:hover {
+	background-color: rgba(0, 255, 0, 0.529);
+	color: white;
+}
+
+.sectionStack {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-gap: 40px;
+	padding: 28px 10px;
+	border-radius: 0.5rem 0 0 0.5rem;
+	overflow-x: hidden;
+}
+
+.slider-div .sectionStack button {
+	position: relative;
+	width: 100%;
+	padding: 30px;
+	border-radius: 0.5rem;
+	border: 2px solid green;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: 0.5s;
+}
+
+.sectionUnStack {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 30px;
+	padding: 28px 0px;
+	pointer-events: none;
+	border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.slider-div {
+	overflow: hidden;
+	opacity: 0;
+	transform: translateY(35px);
+	transition: all 0.6s ease-in-out;
+}
+
+.slider-div-appear {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.slider-div button {
+	position: relative;
+	width: 300px;
+	padding: 30px;
+	border-radius: 0.5rem;
+	border: 2px solid green;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: 0.5s;
+}
+
+.slider-div button::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	height: 30%;
+	width: 100%;
+	background-color: green;
+}
+
+.slider-div button .imges {
+	z-index: 1;
+}
+
+.slider-div button img {
+	width: 100px;
+	height: 100px;
+	padding: 3px;
+	border: 3px solid green;
+	border-radius: 50%;
+	background-color: white;
+}
+
+.slider-div button .general {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	text-align: left;
+	z-index: 10;
+	margin-top: 20px;
+}
+
+.slider-div button .general-appear {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.nationality {
+	color: green;
+}
+
+.slider-div button .general a:link,
+.slider-div button .general a:visited {
+	color: green;
+	text-decoration: underline;
+	pointer-events: all;
+}
+
+.slider-div button .general a:actve svg {
+	transform: rotate(45deg) !important;
+}
+
+.slider-div button .general a:hover {
+	color: black;
+}
+
+.slider-div button .general i {
+	color: green;
+	font-style: normal;
+	padding: 0 2px;
+}
+
+.slider-div button .general .frontend {
+	padding: 10px 0;
+}
+
+.slider-div button .general ul {
+	padding: 6px 0;
+}
+
+.slider-div button .general ul li {
+	font-weight: 500;
+	line-height: 2;
+}
+
+.slider-div button .general p {
+	font-weight: 500;
+	padding: 5px 0;
+}
+
+.slider-div button .general div.uiux-frontend {
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 0;
+}
+
+.slider-div button .general .contact {
+	padding-top: 16px;
+}
+
+.slider-div button .general div.rating-button {
+	padding: 10px 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* footer area */
+
+footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 0;
+	border-top: 1px solid green;
+	background: linear-gradient(
+		140deg,
+		rgba(154, 170, 144, 0.2),
+		rgba(149, 237, 149, 0.12),
+		rgba(117, 227, 117, 0.15)
+	);
+	position: relative;
+	bottom: 0;
+}
+
+footer div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer div:first-child {
+	margin-bottom: 10px;
+}
+
+footer em {
+	display: inline-block;
+	color: white;
+	font-size: 20px;
+	padding: 0 4px;
+}
+
+footer em span.fade {
+	color: green;
+}
+
+footer code {
+	display: inline-block;
+	font-size: 15px;
+	padding: 0 3px;
+}
+
+footer var {
+	display: inline-block;
+	font-size: 15px;
+	padding: 0 3px;
+}
+
+footer samp {
+	display: none;
+}
+
+/* fancyy video */
+
+div.fancyvideo {
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.5);
+	visibility: hidden;
+	opacity: 0;
+	z-index: -100;
+	transition: all 0.35s linear;
+}
+
+div.fancyvideo.show {
+	z-index: 1000;
+	opacity: 1;
+	visibility: visible;
+}
+
+div.fancyvideo.show div {
+	scale: 1;
+	opacity: 1;
+}
+
+div.fancyvideo div {
+	scale: 0;
+	opacity: 0;
+	transition: all 0.35s;
+}
+
+.fancyvideo video {
+	width: 300px;
+	height: 250px;
+}
+
+/* contact modal */
+
+div.contact-modal {
+	display: flex;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	background: transparent;
+	justify-content: center;
+	z-index: -100;
+	overflow-y: scroll;
+	visibility: hidden;
+}
+
+div.contact-modal.show {
+	visibility: visible;
+	z-index: 100;
+}
+
+div.contact-modal.show .contact-div {
+	scale: 1;
+}
+
+div.contact-modal .contact-div {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background: white;
+	overflow-y: scroll;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	scale: 0;
+	transition: all 0.35s;
+}
+
+div.contact-modal .contact-div::-webkit-scrollbar {
+	display: none;
+}
+
+div.contact-modal .contact-div img {
+	width: 100px;
+	height: 100px;
+	padding: 3px;
+	border: 3px solid green;
+	border-radius: 50%;
+	background-color: white;
+	margin-top: 150px;
+}
+
+div.contact-modal .contact-div button {
+	position: fixed;
+	top: 2%;
+	left: 3%;
+	font-size: 35px;
+	font-weight: bolder;
+	padding: 0 5px;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	border: none;
+	color: black;
+	cursor: pointer;
+	background-color: white;
+}
+
+div.contact-modal .contact-div section {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-gap: 20px;
+	width: 100%;
+	margin: 30px 0px 40px;
+}
+
+div.contact-modal .contact-div section h2 {
+	text-align: center;
+	font-size: 32px;
+	padding-bottom: 20px;
+}
+
+div.contact-modal .contact-div section div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: whitesmoke;
+	margin: 0 15px;
+	border: 1.5px solid green;
+	border-radius: 0.4rem;
+	padding: 15px;
+}
+
+div.contact-modal .contact-div section span {
+	width: 20%;
+}
+
+div.contact-modal .contact-div section span svg {
+	width: 100%;
+	height: 35px;
+}
+
+div.contact-modal .contact-div section .google-div span svg {
+	color: orangered;
+}
+
+div.contact-modal .contact-div section .linkedin-div span svg {
+	color: black;
+}
+
+div.contact-modal .contact-div section .twitter-div span svg {
+	color: dodgerblue;
+}
+
+div.contact-modal .contact-div section .whatsapp-div span svg {
+	color: green;
+}
+
+div.contact-modal .contact-div section .facebook-div span svg {
+	color: blue;
+}
+
+div.contact-modal .contact-div section a:link,
+div.contact-modal .contact-div section a:visited {
+	color: green;
+	text-decoration: underline;
+}
+
+div.contact-modal .contact-div section div p {
+	width: 70%;
+	margin-left: 10px;
+}
+
+/* profile about */
+
+.profile-modal {
+	display: none;
+	position: relative;
+	width: 100%;
+	margin: 90px 0;
+}
+
+.profile-modal .profile-card {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-gap: 40px 0;
+	padding: 0 15px;
+}
+
+.profile-modal .profile-card img {
+	width: 100px;
+	height: 100px;
+	padding: 3px;
+	border: 2px solid green;
+	border-radius: 50%;
+}
+
+.profile-modal .profile-card progress {
+	background-color: green;
+	height: 7px;
+}
+
+.profile-modal .profile-card button {
+	position: relative;
+	width: 100%;
+	padding: 30px 25px;
+	border-radius: 0.5rem;
+	border: none;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.profile-modal .profile-card button .overall {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	text-align: left;
+	margin-top: 20px;
+}
+
+/* profile btn */
+
+.profile-modal .profile-card .profile-button article,
+.profile-modal .profile-card .profile-button article div {
+	text-align: center;
+}
+
+/* interest */
+.profile-modal .profile-card .interest-button {
+	display: flex;
+	flex-direction: column;
+}
+
+.profile-modal .profile-card .interest-button h2 {
+	color: purple;
+	padding: 0px 0 15px;
+}
+
+.profile-modal .profile-card .interest-button strong {
+	color: purple;
+}
+
+.profile-modal .profile-card .interest-button li {
+	padding: 15px 0;
+	font-weight: 500;
+	line-height: 20px;
+}
+
+/* education */
+.profile-modal .profile-card .education-button {
+	position: relative;
+	height: fit-content;
+}
+
+.profile-modal .profile-card:last-child a:link,
+.profile-modal .profile-card:last-child a:visited {
+	text-align: center;
+	color: purple;
+	padding: 10px 0;
+	line-height: 10px;
+	text-decoration: underline;
+	font-style: italic;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+		sans-serif;
+}
+
+.profile-modal .profile-card .education-button .slide-images {
+	position: absolute;
+	top: 2%;
+	width: 300px;
+	padding: 5px;
+	overflow: hidden;
+	border: 2px solid blue;
+	border-radius: 0.5rem;
+	display: none;
+}
+
+.profile-modal .profile-card .education-button .slide-images .slide-images-div {
+	display: none;
+	width: 100%;
+	border-radius: 0.5rem;
+}
+
+.profile-modal
+	.profile-card
+	.education-button
+	.slide-images
+	.slide-images-div
+	input {
+	display: none;
+}
+
+.profile-modal
+	.profile-card
+	.education-button
+	.slide-images
+	.slide-images-div
+	.slide {
+	transition: 0.6s;
+}
+
+.profile-modal .profile-card .education-button img {
+	width: 300px;
+	height: 150px;
+	border-radius: 0.5rem;
+	border: none;
+}
+
+.profile-modal .profile-card .education-button .overall {
+	position: relative;
+}
+
+.profile-modal .profile-card .education-button .overall h2 {
+	color: blue;
+	padding: 20px 0;
+}
+
+.profile-modal .profile-card .education-button .overall h3 {
+	font-weight: bolder;
+}
+
+.profile-modal .profile-card .education-button .overall big {
+	color: blue;
+	font-weight: 600;
+}
+
+.profile-modal .profile-card .education-button .overall h3 small {
+	color: red !important;
+	font-weight: 500;
+}
+
+.profile-modal .profile-card .education-button .overall .goog {
+	color: orangered;
+	font-weight: 500;
+}
+
+.profile-modal .profile-card .education-button .overall div {
+	display: flex;
+	flex-direction: column;
+	padding: 20px 0 0;
+	line-height: 22px;
+}
+
+.small-slide {
+	font-weight: bold;
+	display: none;
+}
+
+/* projects modal starts here */
+
+div.projectproject {
+	position: relative;
+	margin: 90px 0 70px;
+	/* display: none; */
+}
+
+div.projectproject .project-modal button {
+	background: white;
+	border: none;
+	outline: none;
+	width: 100vw;
+}
+
+div.projectproject .project-modal button section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 35px;
+	text-align: left;
+	width: 100vw;
+}
+
+div.projectproject .project-modal button section div {
+	padding: 0 5px 10px;
+	border: 1px solid purple;
+	margin-bottom: 30px;
+	border-radius: 0.5rem;
+	width: 90vw;
+	box-shadow: -1px 1px 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+div.projectproject .project-modal button section h2 {
+	padding: 50px 0;
+	text-align: center;
+	font-weight: 500;
+	color: green;
+	font-size: 35px;
+}
+
+div.projectproject .project-modal button section h3 {
+	font-size: 25px;
+	font-weight: 500;
+	background: purple;
+	color: white;
+	margin: 0 -5px;
+	padding: 20px 10px;
+	border-radius: 0.5rem 0.5rem 0 0;
+}
+
+div.projectproject .project-modal button section strong {
+	font-weight: bold;
+	padding: 20px 0 0;
+	color: purple;
+}
+
+div.projectproject .project-modal button section p {
+	line-height: 25px;
+	font-weight: 500;
+	font-size: 18px;
+}
+
+div.projectproject .project-modal button section video {
+	width: 90vw;
+	height: 300px;
+	padding: 60px 0;
+}
+
+div.projectproject .project-modal button li {
+	line-height: 1.5;
+	font-weight: 600;
+	font-size: 13.5px;
+}
+div.projectproject .project-modal button li a:link,
+div.projectproject .project-modal button li a:visited {
+	text-decoration: underline;
+	font-weight: bolder;
+}
+
+/* responsiveness progressive Enhancement */
+
+@media screen and (min-width: 500px) {
+	/* slider-div */
+
+	section.absolute {
+		margin: 120px 0 100px;
+	}
+
+	section.absolute div.stack {
+		display: none;
+	}
+
+	.sectionStack {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 30px;
+		padding: 28px 0px;
+		pointer-events: none;
+		border-radius: 0.5rem 0 0 0.5rem;
+	}
+
+	section.absolute div.slider {
+		transform: translate(-6%, -30%);
+	}
+
+	.slider-div button {
+		width: 400px;
+		transition: all 1s;
+	}
+
+	.slider-div button::before {
+		height: 35%;
+	}
+
+	.slider-div button img {
+		width: 200px;
+		height: 200px;
+	}
+
+	.slider-div button .general {
+		text-align: center;
+	}
+
+	.slider-div button .general h1 {
+		font-size: 30px;
+	}
+
+	.slider-div button .general small:not(.nationality) {
+		font-size: 15px;
+		font-weight: 500;
+	}
+
+	.slider-div button .general ul {
+		transform: translate(15%);
+	}
+
+	.slider-div button .general ul li {
+		text-align: left;
+		font-weight: 500;
+		font-size: 15px;
+	}
+
+	.slider-div button .general p {
+		font-weight: 500;
+		font-size: 15px;
+	}
+
+	/* footer */
+
+	footer samp {
+		display: flex;
+		padding: 0 4px;
+	}
+
+	div.contact-modal .contact-div section .phone-div {
+		display: none;
+	}
+
+	div.contact-modal .contact-div img {
+		position: relative;
+		width: 300px;
+		height: 300px;
+		transform: translateY(5%);
+		margin-top: 400px;
+	}
+
+	/* projects */
+
+	div.projectproject .project-modal button section div {
+		width: 400px;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	div.projectproject .project-modal button section {
+		display: grid;
+		place-items: center;
+		grid-template-columns: repeat(2, 1fr);
+		width: 100vw;
+	}
+
+	div.projectproject .project-modal button section div {
+		width: 350px;
+		grid-gap: 1110px 1000px;
+	}
+
+	div.projectproject .project-modal button section h2 {
+		padding: 50px 0;
+		text-align: center;
+		font-weight: 500;
+		color: green;
+		font-size: 35px;
+		grid-column: span 2;
+	}
+
+	div.projectproject .project-modal button section h3 {
+		font-size: 25px;
+		font-weight: 500;
+		background: purple;
+		color: white;
+		margin: 0 -5px;
+		padding: 20px 10px;
+		border-radius: 0.5rem 0.5rem 0 0;
+	}
+
+	div.projectproject .project-modal button section strong {
+		font-weight: bold;
+		padding: 20px 0 0;
+		color: purple;
+	}
+
+	div.projectproject .project-modal button section p {
+		line-height: 25px;
+		font-weight: 500;
+		font-size: 18px;
+	}
+
+	div.projectproject .project-modal button section video {
+		width: 92vw;
+		height: 300px;
+		grid-column: span 2;
+	}
+
+	div.projectproject .project-modal button li {
+		line-height: 1.5;
+		font-weight: 600;
+		font-size: 13.5px;
+	}
+	div.projectproject .project-modal button li a:link,
+	div.projectproject .project-modal button li a:visited {
+		text-decoration: underline;
+		font-weight: bolder;
+	}
+}
+
+@media screen and (min-width: 723px) {
+	section.absolute div.slider {
+		transform: translate(-25%, -20%);
+	}
+
+	section.absolute {
+		padding: 20px 20px 0px 35px;
+	}
+	.slider-div {
+		grid-gap: 60px;
+	}
+
+	/* modal video */
+
+	.fancyvideo video {
+		width: 500px;
+		height: 300px;
+	}
+
+	div.contact-modal .contact-div section div p {
+		width: 100%;
+		font-size: 21px;
+	}
+	div.contact-modal .contact-div section h2 {
+		font-size: 40px;
+		grid-column: 1 / span 2;
+	}
+
+	div.contact-modal .contact-div section {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 45px 0px;
+		width: 100%;
+		margin: 90px 0px;
+	}
+
+	div.contact-modal .contact-div section div {
+		padding: 25px;
+		margin: 0 25px;
+	}
+
+	.profile-modal .profile-card {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 40px;
+		padding: 0 15px;
+	}
+}
+
+@media screen and (min-width: 912px) {
+	/* modal video */
+
+	.fancyvideo video {
+		width: 600px;
+		height: 350px;
+	}
+
+	div.contact-modal .contact-div section div p {
+		font-size: 25px;
+	}
+	div.contact-modal .contact-div section h2 {
+		font-size: 45px;
+	}
+
+	div.contact-modal .contact-div img {
+		width: 280px;
+		height: 280px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	/* modal video */
+
+	div.contact-modal .contact-div section div p {
+		width: 100%;
+		font-size: 21px;
+	}
+	div.contact-modal .contact-div section h2 {
+		font-size: 40px;
+		grid-column: 1 / span 3;
+	}
+
+	div.contact-modal .contact-div section {
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 45px 0px;
+		width: 100%;
+		margin: 90px 0px;
+	}
+
+	div.contact-modal .contact-div section div {
+		padding: 25px 15px;
+		margin: 0 20px;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	/* modal video */
+
+	.fancyvideo video {
+		width: 700px;
+		height: 500px;
+	}
+}
+
+@media screen and (min-width: 1450px) {
+	article.intro {
+		margin-top: 130px;
+	}
+
+	article img {
+		width: 600px;
+		height: 500px;
+	}
+}
+
+@media screen and (min-width: 1700px) {
+	article.intro {
+		padding: 65px 150px 0;
+	}
+}
+
+@media screen and (min-width: 1900px) {
+	.slider-div button {
+		transition: none;
+	}
+	.slider {
+		display: none;
+	}
+}
+
+/* responsiveness Graceful Degradation */
+
+@media screen and (max-width: 1400px) {
+	article section {
+		padding: 40px 60px 0 40px;
+	}
+}
+
+@media screen and (max-width: 1300px) {
+	article.intro {
+		padding: 80px 40px 0;
+	}
+
+	article section {
+		padding: 40px 60px 0 40px;
+	}
+
+	article div {
+		margin: 50px 0;
+	}
+
+	button.fancy {
+		margin-right: 50px;
+	}
+
+	article img {
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	article section {
+		padding: 30px 20px 0 10px;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	article.intro {
+		padding: 80px 20px 0;
+	}
+}
+
+@media screen and (max-width: 820px) {
+	article.intro {
+		padding: 80px 10px 0;
+	}
+
+	article section {
+		padding: 30px 10px 0 10px;
+	}
+
+	article img {
+		height: 400px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	article section {
+		padding: 10px 5px 0 0px;
+	}
+	button.fancy {
+		margin-right: 35px;
+	}
+}
+
+@media screen and (max-width: 730px) {
+	nav li.middle,
+	.profile {
+		display: none;
+	}
+
+	nav li.logo {
+		padding: 0.6rem 0;
+	}
+
+	nav {
+		height: 80px;
+	}
+
+	li.hamm-div {
+		height: 20px;
+		display: flex;
+		flex-direction: column;
+		transform: translate(-50%, 50%);
+		padding: 0.5rem;
+		cursor: pointer;
+	}
+
+	.hamm-div.animate {
+		transform: translate(-50%, 70%);
+	}
+
+	.hamm-div.animate .top {
+		transform: rotate(45deg);
+		margin-bottom: -20px;
+	}
+	.hamm-div.animate .center {
+		transform: translateY(100px);
+		opacity: 0;
+	}
+	.hamm-div.animate .last {
+		transform: rotate(-45deg);
+		margin-top: 8px;
+	}
+
+	.hamm:not(.last) {
+		margin-bottom: 4px;
+	}
+
+	.hamm {
+		background-color: green;
+		height: 4px;
+		width: 30px;
+		transition: all 0.35s;
+	}
+
+	.hamm.top {
+		border-radius: 0.3rem;
+	}
+	.hamm.center {
+		border-radius: 0.16rem;
+	}
+	.hamm.last {
+		border-radius: 0.3rem;
+	}
+
+	.animate.hamm-content {
+		top: 76px;
+		transform: translateY(0%);
+	}
+
+	.hamm-content ul {
+		display: block;
+		background-color: white;
+		border: none;
+	}
+
+	.content img,
+	.hamm-content .profile-btn {
+		width: 70px;
+		height: 70px;
+		border: none;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+
+	.profile-btn:hover,
+	.hamm-content .about-btn:hover {
+		opacity: 0.5;
+	}
+
+	.hamm-content ul li {
+		width: 100%;
+		padding: 15px 30px;
+	}
+
+	.hamm-content li.mid a {
+		color: green;
+		padding: 10px 100px 10px 0;
+		font-size: 21px;
+		font-weight: 500;
+	}
+
+	.hamm-content .about-btn {
+		width: 90%;
+		padding: 9px 0;
+		border: none;
+		border-radius: 0.2rem 0.5rem;
+		background-color: green;
+		color: white;
+		font-size: 21px;
+		font-weight: 500;
+		cursor: pointer;
+	}
+
+	/* article */
+
+	article.intro {
+		flex-direction: column;
+		padding: 40px 35px 0;
+		margin-top: 85px;
+		align-items: center;
+	}
+
+	article img {
+		width: 100%;
+		height: 400px;
+	}
+
+	article section.intro-section {
+		padding: 0;
+		margin-top: 15px;
+	}
+
+	article p.intro-p {
+		position: relative;
+		margin-bottom: 20px;
+	}
+
+	button.fancy {
+		margin-right: 15px;
+	}
+}
+
+/* hamm enters */
+
+@media screen and (max-width: 649px) {
+	nav ul {
+		height: 75px;
+	}
+
+	nav li.logo {
+		margin: 10px 0px 5px 25px !important;
+		padding: 8px;
+	}
+
+	nav li.logo a:link {
+		padding: 10px;
+	}
+
+	article.intro {
+		margin-top: 100px;
+	}
+}
+
+@media screen and (max-width: 390px) {
+	body::-webkit-scrollbar {
+		display: none;
+	}
+	article.intro {
+		margin-top: 65px;
+		padding: 40px 20px 0;
+	}
+
+	article img {
+		width: 100%;
+		height: 300px;
+	}
+
+	article section h2 {
+		font-size: 32px;
+	}
+
+	article p.quote {
+		font-size: 18px;
+		font-style: italic;
+		line-height: 27px;
+	}
+
+	article p.intro-p {
+		font-size: 15px;
+	}
+
+	.hamm-content .about-btn {
+		width: 80%;
+	}
+
+	button.fancy {
+		margin-right: 80px;
+		padding: 14px 22px;
+	}
+
+	button.anotherfancy {
+		padding: 13px 30px;
+	}
+
+	div.slider .previous:hover,
+	div.slider .next:hover {
+		background-color: rgb(189, 185, 185);
+		color: inherit;
+	}
+}
+
+@media screen and (max-width: 371px) {
+	button.fancy {
+		margin-right: 17px;
+		padding: 14px 20px;
+	}
+
+	button.anotherfancy {
+		padding: 15px 25px;
+	}
+}
+
+@media screen and (max-width: 330px) {
+	section.absolute {
+		margin: 0;
+		padding-bottom: 40px;
+	}
+	.slider-div {
+		margin-top: 20px;
+		padding: 0;
+	}
+
+	.slider-div button {
+		width: 290px;
+	}
+}
+
+@media screen and (max-width: 280px) {
+	section.absolute {
+		margin: 0;
+		padding-bottom: 40px;
+	}
+	.slider-div {
+		margin-top: 5px;
+		padding: 0;
+	}
+
+	div.contact-modal .contact-div section {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-gap: 20px 0;
+		width: 100%;
+		margin: 30px 0px 40px;
+		word-break: break-all;
+	}
+}
